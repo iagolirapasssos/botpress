@@ -1,5 +1,5 @@
-/* Maximize o chat e oculte o botão flutuante */
-html, body, .bpWebchat {
+/* Maximize o webchat */
+html, body, .bpWebchat, #webchat, #webchat iframe {
   margin: 0 !important;
   padding: 0 !important;
   width: 100vw !important;
@@ -8,16 +8,24 @@ html, body, .bpWebchat {
   max-height: 100dvh !important;
   overflow: hidden !important;
   border-radius: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 999999 !important;
 }
 
+/* Oculta o botão flutuante */
 .bpFab {
   display: none !important;
 }
 
+/* Estilização do botão no cabeçalho */
 .bpHeaderContentActionsContainer {
   display: flex !important;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 0.5em;
+  padding-right: 1em;
 }
 
 .custom-header-button {
@@ -30,4 +38,11 @@ html, body, .bpWebchat {
   padding: 0.2em 0.6em;
   color: white;
   font-weight: bold;
+  font-size: 0.9em;
+  transition: background 0.2s ease;
+}
+
+.custom-header-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
 }
